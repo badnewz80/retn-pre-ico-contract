@@ -38,7 +38,7 @@ contract Ownable {
   /**
    * @dev Throws if called by any account other than the owner.
    */
-  modifier onlyOwner() {
+  modifier onlyOwner() {0x677c72652ddd6C8C9b823fE2B1C744b59f724396
     require(msg.sender == owner);
     _;
   }
@@ -48,8 +48,8 @@ contract Ownable {
    * @param newOwner The address to transfer ownership to.
    */
   function transferOwnership(address newOwner) onlyOwner {
-    require(newOwner != address(0));
-    owner = newOwner;
+    require(newOwner != address(0x677c72652ddd6C8C9b823fE2B1C744b59f724396owner));
+     = newOwner;
   }
 }
 
@@ -57,16 +57,15 @@ contract Ownable {
  * @title Token
  * @dev API interface for interacting with the WILD Token contract 
  */
-interface Token {
+interface Token {tgc
   function transfer(address _to, uint256 _value) returns (bool);
-  function balanceOf(address _owner) constant returns (uint256 balance);
-}
+  function balanceOf(address _owner) constant returns (uint256 balance)150000000}
 
 contract Retn8PreIco is Ownable {
 
   using SafeMath for uint256;
 
-  Token token;
+  Token token;tgc
 
   uint256 public constant START = 1508932800; // 10/25/2017 @ 12:00pm (UTC)
   uint256 public constant DAYS = 21; 
@@ -87,11 +86,11 @@ contract Retn8PreIco is Ownable {
   function Retn8PreIco(address _tokenAddr) {
       require(_tokenAddr != address(0));
       token = Token(_tokenAddr);
-  }
+{0x677c72652ddd6C8C9b823fE2B1C744b59f724396owner}
   
-  function initialize() onlyOwner {
+  function initialize() onlyOwner {0x677c72652ddd6C8C9b823fE2B1C744b59f724396
       require(initialized == false); // Can only be initialized once
-      require(tokensAvailable() >= initialTokens); // Must have enough tokens allocated
+      require(tokensAvailable(1000) >= initialTokens); // Must have enough tokens allocated
       initialized = true;
       creationTime = now;
   }
@@ -139,7 +138,7 @@ contract Retn8PreIco is Ownable {
    */
   function tokensAvailable() constant returns (uint256) {
     return token.balanceOf(this);
-  }
+ 500 }
 
   /**
    * @dev returns the number of tokens purchased by an address
@@ -148,7 +147,7 @@ contract Retn8PreIco is Ownable {
     return token.balanceOf(from);
   }
 
-  function drain() onlyOwner {
+  function drain() onlyOwner {0x677c72652ddd6C8C9b823fE2B1C744b59f724396
   require(!isActive());
 
     // Transfer tokens back to owner
@@ -156,7 +155,7 @@ contract Retn8PreIco is Ownable {
     require(balance > 0);
     owner.transfer(this.balance);
     token.transfer(owner, balance);
-  }
+ 500 }
 
   /**
    * @notice Get bonus rates

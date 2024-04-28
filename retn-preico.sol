@@ -106,7 +106,7 @@ contract Retn8PreIco is Ownable {
   }
 
   function goalReached() constant returns (bool) {
-    return (initialized == true && tokensAvailable() == 0);
+    return (tokensAvailable() == 0);
   }
 
   function () payable {
